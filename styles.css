@@ -87,17 +87,24 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; }
 }
 .brand { display: inline-flex; align-items: center; flex: 0 0 auto; gap: 12px; }
 .brand-seal {
-  display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
+  display: flex;
+  width: 44px;
+  height: 44px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
   color: var(--cream);
   border: 1px solid currentColor;
   font-family: var(--serif);
-  font-size: 24px;
-  line-height: 1;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+  text-align: center;
   transition: color 0.35s ease, background 0.35s ease;
 }
+.brand-seal span { display: block; white-space: nowrap; }
 .scrolled .brand-seal { color: var(--white); background: var(--wine); border-color: var(--wine); }
 .brand-copy { display: flex; flex-direction: column; line-height: 1.1; }
 .brand-copy strong { font-family: var(--serif); font-size: 20px; font-weight: 600; letter-spacing: 0.16em; }
@@ -700,8 +707,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; }
 .contact { padding-top: 0; background: var(--paper); }
 .contact-shell {
   display: grid;
-  grid-template-columns: 1fr 300px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  align-items: stretch;
   gap: clamp(50px, 8vw, 100px);
   padding: clamp(54px, 7vw, 84px);
   color: var(--cream);
@@ -718,6 +725,69 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; }
 .contact-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; margin-top: 38px; }
 .contact-placeholder { color: rgba(255, 247, 237, 0.45); font-size: 11px; letter-spacing: 0.08em; }
 .contact-wechat-note { color: var(--gold-light); font-family: var(--serif); font-size: 14px; letter-spacing: 0.06em; }
+.contact-side {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  padding: 28px 24px 24px;
+  color: var(--ink);
+  background: var(--cream);
+  box-shadow: 0 24px 60px rgba(23, 6, 7, 0.2);
+}
+.contact-side-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 21px;
+  border-bottom: 1px solid var(--line);
+}
+.side-seal {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--wine);
+  border: 1px solid var(--wine);
+  font-family: var(--serif);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+.side-seal span { display: block; white-space: nowrap; }
+.contact-side-brand strong { display: block; font-family: var(--serif); font-size: 20px; font-weight: 600; letter-spacing: 0.12em; }
+.contact-side-brand small { display: block; margin-top: 4px; color: var(--muted); font-size: 7px; letter-spacing: 0.17em; }
+.side-label { margin-top: 24px; color: var(--red); font-size: 8px; letter-spacing: 0.18em; }
+.contact-side-services ul { margin-top: 12px; border-top: 1px solid var(--line); }
+.contact-side-services li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.55;
+}
+.contact-side-services li span { color: var(--gold); font-family: var(--serif); font-size: 9px; }
+.contact-side-foot { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); }
+.contact-phone {
+  display: inline-block;
+  color: var(--wine);
+  font-family: var(--serif);
+  font-size: 24px;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+}
+.contact-slogan { margin-top: 8px; color: var(--muted); font-family: var(--serif); font-size: 12px; letter-spacing: 0.08em; }
+.contact-side-qr { width: 160px; margin: 22px auto 0; text-align: center; }
+.contact-side-qr .wechat-qr { width: 100%; border: 1px solid var(--line); }
+.contact-side-qr small { display: block; margin-top: 8px; color: var(--muted); font-size: 9px; letter-spacing: 0.04em; }
+
 .wechat-qr { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; padding: 8px; background: var(--white); box-sizing: border-box; }
 .qr-card { padding: 20px; color: var(--ink); background: var(--cream); text-align: center; }
 .qr-placeholder {
